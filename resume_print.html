@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Professional Resume - Rodrigo Orlando Alves</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            font-size: 10.5px;
+            line-height: 1.45;
+            color: #1e293b;
+            background: white;
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .container {
+            max-width: 210mm;
+            height: 297mm;
+            margin: 0 auto;
+            background: white;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .gradient-header {
+            background: linear-gradient(135deg, #1E40AF 0%, #7C3AED 100%);
+            padding: 24px 32px;
+            color: white;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 90px 1fr auto;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .profile-img {
+            width: 90px;
+            height: 90px;
+            border-radius: 16px;
+            overflow: hidden;
+            border: 3px solid rgba(255, 255, 255, 0.25);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .profile-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .header-info {
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 32px;
+            font-weight: 800;
+            margin-bottom: 4px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            font-size: 17px;
+            color: #bfdbfe;
+            margin-bottom: 10px;
+            font-weight: 500;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 10.5px;
+            color: #dbeafe;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .material-icons-outlined {
+            font-size: 15px;
+        }
+
+        .header-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 7px 14px;
+            border-radius: 8px;
+            font-size: 10px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+            white-space: nowrap;
+        }
+
+        .btn img {
+            width: 14px;
+            height: 14px;
+        }
+
+        .btn-linkedin {
+            background: #0077B5;
+            color: white;
+        }
+
+        .btn-linkedin:hover {
+            background: #006399;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-github {
+            background: #181717;
+            color: white;
+        }
+
+        .btn-github:hover {
+            background: #000;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 36% 64%;
+            flex: 1;
+        }
+
+        .sidebar {
+            background: #f8fafc;
+            padding: 24px 22px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .main-section {
+            padding: 24px 32px;
+        }
+
+        .section {
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            color: #3B82F6;
+            font-size: 9.5px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title-line {
+            width: 24px;
+            height: 1px;
+            background: rgba(59, 130, 246, 0.4);
+        }
+
+        .section-title-full {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title-full .line {
+            flex: 1;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .summary-text {
+            color: #475569;
+            font-size: 10.5px;
+            line-height: 1.6;
+            text-align: justify;
+        }
+
+        .skill-category {
+            margin-bottom: 14px;
+        }
+
+        .skill-category h3 {
+            font-size: 8.5px;
+            font-weight: 700;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 7px;
+            letter-spacing: 0.05em;
+        }
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 5px;
+        }
+
+        .skill-tag {
+            padding: 4px 7px;
+            border-radius: 5px;
+            font-size: 8.5px;
+            font-weight: 500;
+        }
+
+        .skill-tag.blue {
+            background: #dbeafe;
+            color: #1e40af;
+        }
+
+        .skill-tag.indigo {
+            background: #e0e7ff;
+            color: #3730a3;
+        }
+
+        .skill-tag.emerald {
+            background: #d1fae5;
+            color: #065f46;
+        }
+
+        .skill-tag.amber {
+            background: #fef3c7;
+            color: #92400e;
+        }
+
+        .skill-tag.sky {
+            background: #e0f2fe;
+            color: #075985;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            font-size: 10.5px;
+        }
+
+        .language-name {
+            color: #334155;
+            font-weight: 500;
+        }
+
+        .language-level {
+            color: #64748b;
+            font-style: italic;
+        }
+
+        .experience-item {
+            position: relative;
+            padding-left: 22px;
+            margin-bottom: 22px;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 5px;
+            width: 9px;
+            height: 9px;
+            background: #3B82F6;
+            border-radius: 50%;
+            box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.15);
+        }
+
+        .experience-item.past::before {
+            background: #cbd5e1;
+            box-shadow: 0 0 0 3px rgba(203, 213, 225, 0.15);
+        }
+
+        .experience-item::after {
+            content: '';
+            position: absolute;
+            left: 4px;
+            top: 18px;
+            bottom: -22px;
+            width: 2px;
+            background: linear-gradient(to bottom, #e2e8f0 0%, transparent 100%);
+        }
+
+        .experience-item:last-child::after {
+            display: none;
+        }
+
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .experience-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .experience-badge {
+            font-size: 8.5px;
+            font-weight: 700;
+            color: #3B82F6;
+            background: rgba(59, 130, 246, 0.12);
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        .experience-date {
+            font-size: 9.5px;
+            font-weight: 600;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        .experience-company {
+            color: #3B82F6;
+            font-weight: 600;
+            font-size: 12px;
+            margin-bottom: 8px;
+        }
+
+        .experience-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .experience-list li {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 5px;
+            font-size: 10.5px;
+            color: #475569;
+            line-height: 1.5;
+        }
+
+        .experience-list li::before {
+            content: '•';
+            color: #3B82F6;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+
+        .education-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 18px;
+            border-radius: 10px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .education-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 5px;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .education-title {
+            font-size: 13.5px;
+            font-weight: 700;
+            color: #1e293b;
+        }
+
+        .education-badge {
+            font-size: 8.5px;
+            font-weight: 700;
+            color: #3B82F6;
+            background: rgba(59, 130, 246, 0.12);
+            padding: 3px 8px;
+            border-radius: 5px;
+        }
+
+        .education-institution {
+            color: #3B82F6;
+            font-weight: 600;
+            font-size: 11.5px;
+            margin-bottom: 3px;
+        }
+
+        .education-date {
+            font-size: 9.5px;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        footer {
+            background: linear-gradient(to right, #f8fafc 0%, #f1f5f9 100%);
+            padding: 14px;
+            text-align: center;
+            font-size: 9px;
+            color: #94a3b8;
+            border-top: 1px solid #e2e8f0;
+            margin-top: auto;
+        }
+
+        @media print {
+            body {
+                margin: 0;
+                padding: 0;
+            }
+
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+            }
+
+            @page {
+                size: A4;
+                margin: 0;
+            }
+
+            .btn:hover {
+                transform: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <header class="gradient-header">
+            <div class="header-content">
+                <div class="profile-img">
+                    <img alt="Rodrigo Orlando Alves profile picture"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuB8cu5tFE82nOG6WBJilRhu1vJiFx86QJUiKw9JQbCNvMFZd7_Kja3IAQzqkm-xOPXp3MsEDJFM68ElPgix_c2vqmeIJISlI4Lz4nmU07r6eyFV34myBVQuOotpey00Q5yX3rAhxvC1Rw1W4lPcSRs5F7Msn4578lXNDqQnUIRSVjHRtEm4O1jGYrecrFr_9Y6cgNbWhSsjij4c2Q30ZZoTRhX9D4MXkGdC7VDlIy3cZD2DsDkfg6Jay90k6RDQTkg_ScHSMFRx0VA" />
+                </div>
+                <div class="header-info">
+                    <h1>Rodrigo Orlando Alves</h1>
+                    <p class="subtitle">QA Automation Engineer | SDET</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="material-icons-outlined">place</span>
+                            São Paulo - SP
+                        </div>
+                        <div class="contact-item">
+                            <span class="material-icons-outlined">phone_android</span>
+                            (11) 98384-4401
+                        </div>
+                        <div class="contact-item">
+                            <span class="material-icons-outlined">email</span>
+                            rodrigod3v@outlook.com
+                        </div>
+                    </div>
+                </div>
+                <div class="header-buttons">
+                    <a class="btn btn-linkedin" href="https://linkedin.com/in/rodrigo-orlando-alves" target="_blank">
+                        <img alt="LinkedIn"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z'/%3E%3C/svg%3E" />
+                        LinkedIn
+                    </a>
+                    <a class="btn btn-github" href="https://github.com/rodrigo-orlando-alves" target="_blank">
+                        <img alt="GitHub"
+                            src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='white'%3E%3Cpath d='M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z'/%3E%3C/svg%3E" />
+                        GitHub
+                    </a>
+                </div>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <aside class="sidebar">
+                <section class="section">
+                    <h2 class="section-title">
+                        <span class="section-title-line"></span> RESUMO
+                    </h2>
+                    <p class="summary-text">
+                        Analista QA/SDET com sólida base Full Stack. Especialista em automação estratégica de UI Web
+                        (Cypress), Mobile (Maestro/Appium) e API (Postman/RestAssured). Domínio CI/CD (GitHub Actions),
+                        code review e Shift-Left Testing em Java/TypeScript/React Native.
+                    </p>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">
+                        <span class="section-title-line"></span> HABILIDADES
+                    </h2>
+                    <div>
+                        <div class="skill-category">
+                            <h3>Ferramentas</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag blue">Selenium</span>
+                                <span class="skill-tag blue">Cypress</span>
+                                <span class="skill-tag blue">Appium</span>
+                                <span class="skill-tag blue">Maestro</span>
+                                <span class="skill-tag blue">Robot</span>
+                                <span class="skill-tag blue">Jest</span>
+                                <span class="skill-tag blue">RNTL</span>
+                                <span class="skill-tag blue">Postman</span>
+                                <span class="skill-tag blue">Insomnia</span>
+                                <span class="skill-tag blue">RestAssured</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Linguagens</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag indigo">Java</span>
+                                <span class="skill-tag indigo">JavaScript</span>
+                                <span class="skill-tag indigo">TypeScript</span>
+                                <span class="skill-tag indigo">PHP</span>
+                                <span class="skill-tag indigo">C#</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Frameworks</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag emerald">Spring Boot</span>
+                                <span class="skill-tag emerald">React</span>
+                                <span class="skill-tag emerald">Next.js</span>
+                                <span class="skill-tag emerald">Node.js</span>
+                                <span class="skill-tag emerald">React Native</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Bancos de Dados</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag amber">SQL</span>
+                                <span class="skill-tag amber">MySQL</span>
+                                <span class="skill-tag amber">PostgreSQL</span>
+                                <span class="skill-tag amber">Oracle</span>
+                            </div>
+                        </div>
+
+                        <div class="skill-category">
+                            <h3>Cloud & DevOps</h3>
+                            <div class="skill-tags">
+                                <span class="skill-tag sky">AWS</span>
+                                <span class="skill-tag sky">Oracle Cloud</span>
+                                <span class="skill-tag sky">Azure</span>
+                                <span class="skill-tag sky">Git</span>
+                                <span class="skill-tag sky">GitHub</span>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title">
+                        <span class="section-title-line"></span> IDIOMAS
+                    </h2>
+                    <div class="language-item">
+                        <span class="language-name">Inglês</span>
+                        <span class="language-level">Proficiente (C1)</span>
+                    </div>
+                </section>
+            </aside>
+
+            <div class="main-section">
+                <section class="section">
+                    <h2 class="section-title section-title-full">
+                        EXPERIÊNCIA <span class="line"></span>
+                    </h2>
+
+                    <div class="experience-item">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Analista de Teste | SDET</h3>
+                            <span class="experience-badge">Atual (Remoto)</span>
+                        </div>
+                        <div class="experience-company">Mundo Invest</div>
+                        <ul class="experience-list">
+                            <li>Planejamento, desenvolvimento e execução de testes automatizados utilizando Cypress,
+                                Appium e Selenium.</li>
+                            <li>Colaboração com o time técnico em todas as etapas do ciclo de desenvolvimento, aplicando
+                                metodologias Scrum e Kanban.</li>
+                            <li>Validação de APIs RESTful e integração com bancos de dados PostgreSQL e MySQL.</li>
+                            <li>Análise, acompanhamento e gestão de defeitos, garantindo a qualidade do produto.</li>
+                            <li>Criação e manutenção de testes unitários e de integração com Jest e React Native Testing
+                                Library (RNTL).</li>
+                            <li>Apoio em tarefas de refatoração e melhoria de interfaces mobile desenvolvidas em React
+                                Native.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item past">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Analista de Operações - Desenvolvimento & QA</h3>
+                            <span class="experience-date">Jul 2022 — Nov 2024</span>
+                        </div>
+                        <div class="experience-company">Zumburguer House</div>
+                        <ul class="experience-list">
+                            <li>Desenvolvimento full-stack e manutenção de sistema interno para controle de pedidos e
+                                gestão de estoque.</li>
+                            <li>Testes funcionais e QA: Execução de validações, identificação e acompanhamento de bugs
+                                até resolução completa.</li>
+                            <li>Implementação de automação de processos operacionais para otimização de fluxo de
+                                estoque.</li>
+                            <li>Criação de aplicativos web (cardápio digital) e integração com plataformas de redes
+                                sociais.</li>
+                            <li>Melhorias técnicas em sistemas de atendimento e suporte a campanhas promocionais
+                                digitais.</li>
+                        </ul>
+                    </div>
+
+                    <div class="experience-item past">
+                        <div class="experience-header">
+                            <h3 class="experience-title">Analista de Suporte Técnico Júnior</h3>
+                            <span class="experience-date">Fev 2019 — Mar 2020</span>
+                        </div>
+                        <div class="experience-company">TotalTech Assistência Técnica</div>
+                        <ul class="experience-list">
+                            <li>Manutenção e reparo de hardware (desktops e notebooks).</li>
+                            <li>Instalações e configurações de sistemas operacionais.</li>
+                            <li>Configuração e otimização de redes e modems.</li>
+                            <li>Suporte técnico direto aos usuários.</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section class="section">
+                    <h2 class="section-title section-title-full">
+                        FORMAÇÃO <span class="line"></span>
+                    </h2>
+                    <div class="education-box">
+                        <div class="education-header">
+                            <h3 class="education-title">Análise e Desenvolvimento de Sistemas</h3>
+                            <span class="education-badge">Cursando</span>
+                        </div>
+                        <div class="education-institution">Descomplica</div>
+                        <p class="education-date">Fev 2024 — Abr 2026</p>
+                    </div>
+                </section>
+            </div>
+        </div>
+
+        <footer>
+            © 2024 Rodrigo Orlando Alves • Professional Resume
+        </footer>
+    </div>
+</body>
+
+</html>
